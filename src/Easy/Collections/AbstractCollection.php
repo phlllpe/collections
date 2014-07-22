@@ -1,7 +1,7 @@
 <?php
 
-// Copyright (c) Lellys Informática. All rights reserved. See License.txt in the project root for license information.
-
+// Copyright (c) Lellys Informática. All rights reserved. See License.txt in the
+//  project root for license information.
 namespace Easy\Collections;
 
 use ArrayIterator;
@@ -12,9 +12,9 @@ use Easy\Generics\IEquatable;
 /**
  * Provides the abstract base class for a strongly typed collection.
  */
-abstract class AbstractCollection implements ICollection, ICollectionConvertable, IEquatable
+abstract class AbstractCollection implements ICollection, ICollectionConvertable,
+ IEquatable
 {
-
     protected $array = array();
 
     /**
@@ -36,17 +36,19 @@ abstract class AbstractCollection implements ICollection, ICollectionConvertable
         if ($this->defaultComparer === null) {
             $this->defaultComparer = new NumericKeyComparer();
         }
+
         return $this->defaultComparer;
     }
 
     /**
      * Sets the default comparer for this collection
-     * @param IComparer $defaultComparer
+     * @param  IComparer $defaultComparer
      * @return ArrayList
      */
     public function setDefaultComparer(IComparer $defaultComparer)
     {
         $this->defaultComparer = $defaultComparer;
+
         return $this;
     }
 
@@ -64,6 +66,7 @@ abstract class AbstractCollection implements ICollection, ICollectionConvertable
     public function clear()
     {
         $this->array = array();
+
         return $this;
     }
 
@@ -97,6 +100,7 @@ abstract class AbstractCollection implements ICollection, ICollectionConvertable
     public function unserialize($serialized)
     {
         $this->array = unserialize($serialized);
+
         return $this->array;
     }
 
@@ -126,6 +130,7 @@ abstract class AbstractCollection implements ICollection, ICollectionConvertable
                 $array[$key] = $value;
             }
         }
+
         return $array;
     }
 
@@ -136,5 +141,4 @@ abstract class AbstractCollection implements ICollection, ICollectionConvertable
     {
         return array_keys($this->array);
     }
-
 }

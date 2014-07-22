@@ -65,5 +65,4 @@ abstract class ExpressionVisitor
                 throw new \RuntimeException("Unknown Expression " . get_class($expr));
         }
     }
-
 }

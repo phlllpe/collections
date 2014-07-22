@@ -1,7 +1,7 @@
 <?php
 
-// Copyright (c) Lellys Informática. All rights reserved. See License.txt in the project root for license information.
-
+// Copyright (c) Lellys Informática. All rights reserved. See License.txt in the
+//  project root for license information.
 namespace Easy\Collections\Linq;
 
 use Easy\Collections\Linq\Expr\CompositeExpression;
@@ -15,7 +15,6 @@ use Easy\Collections\Linq\Expr\Expression;
  */
 class Criteria
 {
-
     /**
      * @var string
      */
@@ -71,6 +70,7 @@ class Criteria
         if (self::$expressionBuilder === null) {
             self::$expressionBuilder = new ExpressionBuilder();
         }
+
         return self::$expressionBuilder;
     }
 
@@ -82,7 +82,13 @@ class Criteria
      * @param int|null   $firstResult
      * @param int|null   $maxResults
      */
-    public function __construct(Expression $expression = null, array $orderings = null, $firstResult = null, $maxResults = null)
+    public function __construct
+    (
+        Expression $expression = null,
+        array $orderings = null,
+        $firstResult = null,
+        $maxResults = null
+    )
     {
         $this->expression = $expression;
         $this->orderings = $orderings;
@@ -100,6 +106,7 @@ class Criteria
     public function where(Expression $expression)
     {
         $this->expression = $expression;
+
         return $this;
     }
 
@@ -117,9 +124,12 @@ class Criteria
             return $this->where($expression);
         }
 
-        $this->expression = new CompositeExpression(CompositeExpression::TYPE_AND, array(
-            $this->expression, $expression
-        ));
+        $this->expression = new CompositeExpression(
+            CompositeExpression::TYPE_AND,
+            array(
+                $this->expression, $expression
+            )
+        );
 
         return $this;
     }
@@ -138,9 +148,12 @@ class Criteria
             return $this->where($expression);
         }
 
-        $this->expression = new CompositeExpression(CompositeExpression::TYPE_OR, array(
-            $this->expression, $expression
-        ));
+        $this->expression = new CompositeExpression(
+            CompositeExpression::TYPE_OR,
+            array(
+                $this->expression, $expression
+            )
+        );
 
         return $this;
     }
@@ -180,6 +193,7 @@ class Criteria
     public function orderBy(array $orderings)
     {
         $this->orderings = $orderings;
+
         return $this;
     }
 
@@ -203,6 +217,7 @@ class Criteria
     public function setFirstResult($firstResult)
     {
         $this->firstResult = $firstResult;
+
         return $this;
     }
 
@@ -226,7 +241,7 @@ class Criteria
     public function setMaxResults($maxResults)
     {
         $this->maxResults = $maxResults;
+
         return $this;
     }
-
 }

@@ -1,8 +1,10 @@
 <?php
 
-// Copyright (c) Lellys Informática. All rights reserved. See License.txt in the project root for license information.
-
+// Copyright (c) Lellys Informática. All rights reserved. See License.txt in the
+//  project root for license information.
 namespace Easy\Collections;
+
+use Traversable;
 
 /**
  * Provides functionality to convert the collection into any IDictionary
@@ -24,7 +26,8 @@ interface IMapConvertable
 
     /**
      * Returns a Map containing the key/value pairs from the specified Traversable.
-     * @return IMap Returns a Map containing the key/value pairs from the specified Traversable.
+     * @return IMap Returns a Map containing the key/value pairs from the specified
+     *              Traversable.
      */
-    public static function fromItems(\Traversable $items);
+    public static function fromItems(Traversable $items);
 }

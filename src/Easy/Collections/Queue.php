@@ -1,7 +1,7 @@
 <?php
 
-// Copyright (c) Lellys Informática. All rights reserved. See License.txt in the project root for license information.
-
+// Copyright (c) Lellys Informática. All rights reserved. See License.txt in the
+// project root for license information.
 namespace Easy\Collections;
 
 use BadFunctionCallException;
@@ -19,24 +19,27 @@ class Queue extends AbstractCollection implements IQueue
     public function enqueue($item)
     {
         array_push($this->array, $item);
+
         return $this;
     }
 
     /**
      * Adds multiples objects to the end of the Queue.
-     * @param ICollection|array $items The objects to add to the Queue. The value can be null.
+     * @param ICollection|array $items The objects to add to the Queue.
+     *                                 The value can be null.
      */
     public function enqueueMultiple($items)
     {
         foreach ($items as $item) {
             $this->enqueue($item);
         }
+
         return $this;
     }
 
     /**
      * Removes and returns the object at the beginning of the Queue.
-     * @return mixed The object that is removed from the beginning of the Queue.
+     * @return mixed                    The object that is removed from the beginning of the Queue.
      * @throws BadFunctionCallException
      */
     public function dequeue()
@@ -44,12 +47,13 @@ class Queue extends AbstractCollection implements IQueue
         if ($this->isEmpty()) {
             throw new BadFunctionCallException(_('Cannot use method Dequeue on an empty Queue'));
         }
+
         return array_shift($this->array);
     }
 
     /**
      * Returns the object at the beginning of the Queue without removing it.
-     * @return mixed The object at the beginning of the Queue.
+     * @return mixed                    The object at the beginning of the Queue.
      * @throws BadFunctionCallException
      */
     public function peek()
@@ -60,5 +64,4 @@ class Queue extends AbstractCollection implements IQueue
 
         return $this->array[0];
     }
-
 }

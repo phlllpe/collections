@@ -1,22 +1,19 @@
 <?php
 
-// Copyright (c) Lellys Informática. All rights reserved. See License.txt in the project root for license information.
-
+// Copyright (c) Lellys Informática. All rights reserved. See License.txt in the
+//  project root for license information.
 namespace Easy\Collections;
 
 use Closure;
-use Easy\Collections\AbstractCollection;
-use Easy\Collections\IConstIndexAccess;
-use Easy\Collections\ImmutableVector;
 use Easy\Collections\Linq\Criteria;
 use Easy\Collections\Linq\Expr\ClosureExpressionVisitor;
-use Easy\Generics\IEquatable;
 use InvalidArgumentException;
 use OutOfBoundsException;
 use Traversable;
 
 /**
- * Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.
+ * Represents a strongly typed list of objects that can be accessed by index.
+ * Provides methods to search, sort, and manipulate lists.
  */
 class ImmutableVector extends AbstractCollection implements IConstIndexAccess
 {
@@ -91,6 +88,7 @@ class ImmutableVector extends AbstractCollection implements IConstIndexAccess
                 $vector[] = $v;
             }
         }
+
         return $vector;
     }
 
@@ -119,7 +117,11 @@ class ImmutableVector extends AbstractCollection implements IConstIndexAccess
         if ($orderings = $criteria->getOrderings()) {
             $next = null;
             foreach (array_reverse($orderings) as $field => $ordering) {
-                $next = ClosureExpressionVisitor::sortByField($field, $ordering == 'DESC' ? -1 : 1, $next);
+                $next = ClosureExpressionVisitor::sortByField(
+                    $field,
+                    $ordering == 'DESC' ? -1 : 1,
+                    $next
+                );
             }
 
             if ($next === null) {
@@ -138,5 +140,4 @@ class ImmutableVector extends AbstractCollection implements IConstIndexAccess
 
         return ImmutableVector::fromArray($filtered);
     }
-
 }

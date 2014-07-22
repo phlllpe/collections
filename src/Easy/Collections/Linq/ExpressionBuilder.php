@@ -39,7 +39,7 @@ class ExpressionBuilder
 
     /**
      * @param string $field
-     * @param string  $value
+     * @param string $value
      *
      * @return Comparison
      */
@@ -50,7 +50,7 @@ class ExpressionBuilder
 
     /**
      * @param string $field
-     * @param string  $value
+     * @param string $value
      *
      * @return Comparison
      */
@@ -61,7 +61,7 @@ class ExpressionBuilder
 
     /**
      * @param string $field
-     * @param string  $value
+     * @param string $value
      *
      * @return Comparison
      */
@@ -72,7 +72,7 @@ class ExpressionBuilder
 
     /**
      * @param string $field
-     * @param string  $value
+     * @param string $value
      *
      * @return Comparison
      */
@@ -83,7 +83,7 @@ class ExpressionBuilder
 
     /**
      * @param string $field
-     * @param string  $value
+     * @param string $value
      *
      * @return Comparison
      */
@@ -94,7 +94,7 @@ class ExpressionBuilder
 
     /**
      * @param string $field
-     * @param string  $value
+     * @param string $value
      *
      * @return Comparison
      */
@@ -114,8 +114,8 @@ class ExpressionBuilder
     }
 
     /**
-     * @param string $field
-     * @param string[]  $values
+     * @param string   $field
+     * @param string[] $values
      *
      * @return Comparison
      */
@@ -125,8 +125,8 @@ class ExpressionBuilder
     }
 
     /**
-     * @param string $field
-     * @param string[]  $values
+     * @param string   $field
+     * @param string[] $values
      *
      * @return Comparison
      */
@@ -137,9 +137,9 @@ class ExpressionBuilder
 
     /**
      * Returns a value indicating whether a specified substring occurs within this string.
-     * 
+     *
      * @param string $field
-     * @param string  $value
+     * @param string $value
      *
      * @return Comparison
      */
@@ -171,5 +171,4 @@ class ExpressionBuilder
     {
         return new Comparison($field, Comparison::ENDS_WITH, new Value($value));
     }
-
 }

@@ -5,14 +5,14 @@
 namespace Easy\Collections;
 
 use Closure;
-use Easy\Collections\CollectionArray;
 use Easy\Collections\Linq\Criteria;
 use Easy\Collections\Linq\Expr\ClosureExpressionVisitor;
 use InvalidArgumentException;
 use Traversable;
 
 /**
- * Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.
+ * Represents a strongly typed list of objects that can be accessed by index. 
+ * Provides methods to search, sort, and manipulate lists.
  */
 class ArrayList extends CollectionArray implements IVector, IVectorConvertable
 {
@@ -30,6 +30,7 @@ class ArrayList extends CollectionArray implements IVector, IVectorConvertable
     public function add($item)
     {
         array_push($this->array, $item);
+
         return $this;
     }
 
@@ -90,6 +91,7 @@ class ArrayList extends CollectionArray implements IVector, IVectorConvertable
         if ($offset < 0) {
             throw new InvalidArgumentException('The option value must be a number > 0');
         }
+
         return array_key_exists((int) $offset, $this->array);
     }
 
@@ -144,6 +146,7 @@ class ArrayList extends CollectionArray implements IVector, IVectorConvertable
                 $map->add($v);
             }
         }
+
         return $map;
     }
 
@@ -231,5 +234,4 @@ class ArrayList extends CollectionArray implements IVector, IVectorConvertable
 
         return ArrayList::fromArray($filtered);
     }
-
 }

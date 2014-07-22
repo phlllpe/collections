@@ -9,7 +9,8 @@ use IteratorAggregate;
 use Serializable;
 
 /**
- * Provides functionality to evaluate queries against a specific data source wherein the type of the data is not specified.
+ * Provides functionality to evaluate queries against a specific data source 
+ * where in the type of the data is not specified.
  */
 interface ICollection extends Countable, Serializable, IteratorAggregate
 {

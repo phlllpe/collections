@@ -11,7 +11,7 @@ interface IVectorConvertable
 {
 
     /**
-     * Returns a Map of the ICollection, with the integer indicies of the 
+     * Returns a Map of the ICollection, with the integer indicies of the
      * ICollection as the keys and the values of the ICollection as the values.
      * @return IMap
      */

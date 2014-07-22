@@ -116,6 +116,7 @@ class Dictionary extends CollectionArray implements IMap, IMapConvertable
                 $map->add($k, $v);
             }
         }
+
         return $map;
     }
 
@@ -171,5 +172,4 @@ class Dictionary extends CollectionArray implements IMap, IMapConvertable
 
         return Dictionary::fromArray($filtered);
     }
-
 }

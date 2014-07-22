@@ -14,7 +14,11 @@ use OutOfBoundsException;
 /**
  * Provides the abstract base class for a strongly typed collection.
  */
-abstract class CollectionArray extends AbstractCollection implements IIndexAccess, IConstIndexAccess, IQueryable, ISelectable
+abstract class CollectionArray extends AbstractCollection implements
+    IIndexAccess,
+    IConstIndexAccess,
+    IQueryable,
+    ISelectable
 {
 
     /**
@@ -60,7 +64,9 @@ abstract class CollectionArray extends AbstractCollection implements IIndexAcces
 
     /**
      * Sorts the elements in the entire Collection<T> using the specified comparer.
-     * @param IComparer $comparer The ComparerInterface implementation to use when comparing elements, or null to use the default comparer Comparer<T>.Default.
+     * @param IComparer $comparer The ComparerInterface implementation to use 
+     * when comparing elements, or null to use the default comparer 
+     * Comparer<T>.Default.
      */
     public function sort(IComparer $comparer = null)
     {
@@ -68,12 +74,15 @@ abstract class CollectionArray extends AbstractCollection implements IIndexAcces
             $comparer = $this->getDefaultComparer();
         }
         usort($this->array, array($comparer, 'compare'));
+
         return $this;
     }
 
     /**
      * Sorts the keys in the entire Collection<T> using the specified comparer.
-     * @param IComparer $comparer The ComparerInterface implementation to use when comparing elements, or null to use the default comparer Comparer<T>.Default.
+     * @param IComparer $comparer The ComparerInterface implementation to use 
+     * when comparing elements, or null to use the default comparer 
+     * Comparer<T>.Default.
      */
     public function sortByKey(IComparer $comparer = null)
     {
@@ -81,6 +90,7 @@ abstract class CollectionArray extends AbstractCollection implements IIndexAcces
             $comparer = $this->getDefaultComparer();
         }
         uksort($this->array, array($comparer, 'compare'));
+
         return $this;
     }
 
@@ -93,6 +103,7 @@ abstract class CollectionArray extends AbstractCollection implements IIndexAcces
             throw new InvalidArgumentException('The key ' . $index . ' is not present in the dictionary');
         }
         unset($this->array[$index]);
+
         return $this;
     }
 
@@ -105,6 +116,7 @@ abstract class CollectionArray extends AbstractCollection implements IIndexAcces
 
         if ($key !== false) {
             unset($this->array[$key]);
+
             return true;
         }
 
@@ -121,7 +133,7 @@ abstract class CollectionArray extends AbstractCollection implements IIndexAcces
                 return true;
             }
         }
+
         return false;
     }
-
 }

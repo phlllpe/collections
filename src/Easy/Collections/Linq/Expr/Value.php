@@ -35,5 +35,4 @@ class Value implements Expression
     {
         return $visitor->walkValue($this);
     }
-
 }

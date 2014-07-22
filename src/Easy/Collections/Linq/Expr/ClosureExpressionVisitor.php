@@ -66,7 +66,7 @@ class ClosureExpressionVisitor extends ExpressionVisitor
     public static function sortByField($name, $orientation = 1, \Closure $next = null)
     {
         if (!$next) {
-            $next = function() {
+            $next = function () {
                 return 0;
             };
         }
@@ -145,6 +145,7 @@ class ClosureExpressionVisitor extends ExpressionVisitor
             case Comparison::ENDS_WITH:
                 return function ($object) use ($field, $value) {
                     $haystack = ClosureExpressionVisitor::getObjectFieldValue($object, $field);
+
                     return strpos($haystack, $value) + strlen($value) === strlen($haystack);
                 };
 
@@ -197,6 +198,7 @@ class ClosureExpressionVisitor extends ExpressionVisitor
                     return false;
                 }
             }
+
             return true;
         };
     }
@@ -214,8 +216,8 @@ class ClosureExpressionVisitor extends ExpressionVisitor
                     return true;
                 }
             }
+
             return false;
         };
     }
-
 }
