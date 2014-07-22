@@ -15,8 +15,8 @@ class StringComparer implements IComparer
     /**
      * {@inheritdoc}
      */
-    public function compare($x, $y)
+    public function compare($firstObject, $secondObject)
     {
-        return strcmp($x, $y);
+        return strcmp($firstObject, $secondObject);
     }
 }

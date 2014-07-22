@@ -17,11 +17,11 @@ class NumericKeyComparer implements IComparer
     /**
      * {@inheritdoc}
      */
-    public function compare($x, $y)
+    public function compare($firstObject, $secondObject)
     {
-        if ($x < $y) {
+        if ($firstObject < $secondObject) {
             return 1;
-        } elseif ($x === $y) {
+        } elseif ($firstObject === $secondObject) {
             return 0;
         } else {
             return -1;

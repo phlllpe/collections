@@ -131,9 +131,9 @@ class Dictionary extends CollectionArray implements IMap, IMapConvertable
     /**
      * {@inheritdoc}
      */
-    public function filter(Closure $p)
+    public function filter(Closure $callable)
     {
-        return Dictionary::fromArray(array_filter($this->array, $p));
+        return Dictionary::fromArray(array_filter($this->array, $callable));
     }
 
     /**

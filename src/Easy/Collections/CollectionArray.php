@@ -126,10 +126,10 @@ abstract class CollectionArray extends AbstractCollection implements
     /**
      * {@inheritdoc}
      */
-    public function exists(Closure $p)
+    public function exists(Closure $callable)
     {
         foreach ($this->array as $key => $element) {
-            if ($p($key, $element)) {
+            if ($callable($key, $element)) {
                 return true;
             }
         }

@@ -16,10 +16,10 @@ interface IComparer
     /**
      * Compares two objects and returns a value indicating whether one is less
      * than, equal to, or greater than the other.
-     * @param  object $x The first object to compare.
-     * @param  object $y The second object to compare.
+     * @param  object $firstObject The first object to compare.
+     * @param  object $secondObject The second object to compare.
      * @return bool   A boolean that indicates the relative values of x and y,
      * as shown in the following table.
      */
-    public function compare($x, $y);
+    public function compare($firstObject, $secondObject);
 }

@@ -193,9 +193,9 @@ class ArrayList extends CollectionArray implements IVector, IVectorConvertable
     /**
      * {@inheritdoc}
      */
-    public function filter(Closure $p)
+    public function filter(Closure $callable)
     {
-        return ArrayList::fromArray(array_filter($this->array, $p));
+        return ArrayList::fromArray(array_filter($this->array, $callable));
     }
 
     /**

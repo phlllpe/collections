@@ -95,9 +95,9 @@ class ImmutableVector extends AbstractCollection implements IConstIndexAccess
     /**
      * {@inheritdoc}
      */
-    public function filter(Closure $p)
+    public function filter(Closure $callable)
     {
-        return ImmutableVector::fromArray(array_filter($this->array, $p));
+        return ImmutableVector::fromArray(array_filter($this->array, $callable));
     }
 
     /**
